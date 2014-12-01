@@ -7,6 +7,17 @@ use SQRT\URLImmutable;
 
 class urlTest extends PHPUnit_Framework_TestCase
 {
+  function testSlash()
+  {
+    $u = new URL('/');
+
+    $this->assertEquals('/', $u->asString(), 'Пустой URL');
+
+    $u = new URL('/hello////john///');
+    $this->assertEquals('john', $u->getArgument(2), 'Лишние слеши удаляются');
+    $this->assertEquals('/hello/john/', $u->asString(), 'Генерится чистый адрес');
+  }
+
   function testArguments()
   {
     $u = new URL();

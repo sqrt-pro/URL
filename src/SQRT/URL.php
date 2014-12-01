@@ -32,6 +32,11 @@ class URL
     $this->locked = true;
   }
 
+  function __toString()
+  {
+    return $this->asString();
+  }
+
   /**
    * Разбор адреса. Если передан относительный адрес, хост и схема по-умолчанию будут http://localhost
    * $cleanup - нужно ли очищать предыдущие данные
@@ -61,7 +66,7 @@ class URL
         $url = $a['path'];
       }
       $url = trim($url, '/');
-      $arr = explode('/', urldecode($url));
+      $arr = array_filter(explode('/', urldecode($url)));
 
       if (empty($arr)) {
         return false;
