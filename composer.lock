@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/Helpers.git",
-                "reference": "2de9c41e4b6cd359665f21375a1a106dfec092f9"
+                "reference": "7c4cdbfbc5469e8e9a385a8c702c3e00aaf04c18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/Helpers/zipball/2de9c41e4b6cd359665f21375a1a106dfec092f9",
-                "reference": "2de9c41e4b6cd359665f21375a1a106dfec092f9",
+                "url": "https://api.github.com/repos/sqrt-pro/Helpers/zipball/7c4cdbfbc5469e8e9a385a8c702c3e00aaf04c18",
+                "reference": "7c4cdbfbc5469e8e9a385a8c702c3e00aaf04c18",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +35,7 @@
             ],
             "description": "Helpers is part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-02 03:27:00"
+            "time": "2014-12-02 03:41:54"
         },
         {
             "name": "sqrt-pro/tag",

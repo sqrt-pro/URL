@@ -3,7 +3,7 @@
 namespace SQRT;
 
 use SQRT\Tag\A;
-use SQRT\Filter;
+use SQRT\Helpers\Filter;
 use True\Punycode;
 
 class URL
