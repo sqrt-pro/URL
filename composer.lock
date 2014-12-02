@@ -4,8 +4,39 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7c352631e5344c1c0f3c90d92963cff3",
+    "hash": "9c3f38582fadffb293c6e43341127942",
     "packages": [
+        {
+            "name": "sqrt-pro/helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sqrt-pro/Helpers.git",
+                "reference": "2de9c41e4b6cd359665f21375a1a106dfec092f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sqrt-pro/Helpers/zipball/2de9c41e4b6cd359665f21375a1a106dfec092f9",
+                "reference": "2de9c41e4b6cd359665f21375a1a106dfec092f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SQRT": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Helpers is part of SQRT Framework",
+            "homepage": "http://fw.sqrt.pro",
+            "time": "2014-12-02 03:27:00"
+        },
         {
             "name": "sqrt-pro/tag",
             "version": "dev-master",
@@ -89,7 +120,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sqrt-pro/tag": 20
+        "sqrt-pro/tag": 20,
+        "sqrt-pro/helpers": 20
     },
     "prefer-stable": false,
     "platform": {

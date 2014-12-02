@@ -3,6 +3,7 @@
 namespace SQRT;
 
 use SQRT\Tag\A;
+use SQRT\Filter;
 use True\Punycode;
 
 class URL
@@ -149,7 +150,7 @@ class URL
       return $default;
     }
 
-    return static::FilterValue($this->subdomains[$level], $filter, $default);
+    return Filter::Value($this->subdomains[$level], $filter, $default);
   }
 
   /** Установить поддомен. Нумерация с конца, с "1" */
@@ -187,7 +188,7 @@ class URL
 
     $v = $this->arguments[$num];
 
-    return static::FilterValue($v, $filter, $default);
+    return Filter::Value($v, $filter, $default);
   }
 
   /** Список всех аргументов. Нумерация с "1" */
@@ -279,7 +280,7 @@ class URL
 
     $v = $this->parameters[$name];
 
-    return static::FilterValue($v, $filter, $default);
+    return Filter::Value($v, $filter, $default);
   }
 
   /**
@@ -294,7 +295,7 @@ class URL
       return $default;
     }
 
-    return static::FilterArray((array)$this->parameters[$name], $filter, $default);
+    return Filter::Arr((array)$this->parameters[$name], $filter, $default);
   }
 
   /** Список всех параметров */
@@ -544,47 +545,6 @@ class URL
     $this->host = join('.', $res);
 
     return $this;
-  }
-
-  /**
-   * Фильтрация значений.
-   * Возвращает значение, если оно проходит фильтр или $default
-   * $filter - callable, regexp или список допустимых значений
-   * Значение в фильтр передается по ссылке!
-   */
-  public static function FilterValue(&$val, $filter = null, $default = false)
-  {
-    $ok = true;
-    if (is_callable($filter)) {
-      $ok = call_user_func_array($filter, array(&$val));
-    } elseif (is_array($filter)) {
-      $ok = in_array($val, $filter);
-    } elseif (!empty($filter)) {
-      $ok = preg_match($filter, $val);
-    }
-
-    return $ok ? $val : $default;
-  }
-
-  /**
-   * Фильтрация значений массива. Возвращает результирующий массив.
-   * Оставляет в результирующем массиве только допустимые значения, или $default, если допустимых значений нет.
-   * Callable может принимать значение по ссылке и изменять его для выводного массива
-   */
-  public static function FilterArray($array, $filter = null, $default = array())
-  {
-    if (empty($array) || !is_array($array)) {
-      return $default;
-    }
-
-    $out = false;
-    foreach ($array as $key => $val) {
-      if (!is_null(static::FilterValue($val, $filter, null))) {
-        $out[$key] = $val;
-      }
-    }
-
-    return $out ?: $default;
   }
 
   /** Установка домена по-умолчанию, если он не указан явно */
