@@ -1,6 +1,9 @@
 # SQRT\URL
 
 [![Build Status](https://travis-ci.org/sqrt-pro/URL.svg?branch=master)](https://travis-ci.org/sqrt-pro/URL)
+[![Coverage Status](https://coveralls.io/repos/sqrt-pro/URL/badge.svg?branch=master)](https://coveralls.io/r/sqrt-pro/URL?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/sqrt-pro/url/version.svg)](https://packagist.org/packages/sqrt-pro/url)
+[![License](https://poser.pugx.org/sqrt-pro/url/license.svg)](https://packagist.org/packages/sqrt-pro/url)
 
 ## Терминология
 
