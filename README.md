@@ -1,5 +1,7 @@
 # SQRT\URL
 
+[![Build Status](https://travis-ci.org/sqrt-pro/URL.svg?branch=master)](https://travis-ci.org/sqrt-pro/URL)
+
 ## Терминология
 
 Часть URL разделенная символом `/` называется аргумент. Например: `/my/cool/page/`. При этом важен порядок следования 
