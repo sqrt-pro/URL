@@ -56,7 +56,8 @@ class URL
     } else {
 
       if ($this->checkSchemeExists($url)) {
-        $a = parse_url($url);
+        $a = $this->mbParseUrl($url);
+
         if (!empty($a['host'])) {
           $this->setHost($a['host']);
         }
@@ -100,7 +101,7 @@ class URL
       $host = 'http://' . $host;
     }
 
-    $a = parse_url($host);
+    $a = $this->mbParseUrl($host);
     $this->setScheme($a['scheme']);
 
     $puny = new Punycode();
@@ -557,5 +558,25 @@ class URL
   public static function GetDomain()
   {
     return static::$default_domain;
+  }
+
+  /** Обертка для parse_url для корректной работы с UTF-8 строками */
+  protected function mbParseUrl($url)
+  {
+    $enc_url = preg_replace_callback(
+      '%[^:/@?&=#]+%usD',
+      function ($matches) {
+        return urlencode($matches[0]);
+      },
+      $url
+    );
+
+    if ($parts = parse_url($enc_url)) {
+      foreach ($parts as $name => $value) {
+        $parts[$name] = urldecode($value);
+      }
+    }
+
+    return $parts;
   }
 }

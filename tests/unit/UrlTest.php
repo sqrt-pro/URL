@@ -1,11 +1,9 @@
 <?php
 
-require_once __DIR__ . '/../init.php';
-
 use SQRT\URL;
 use SQRT\URLImmutable;
 
-class urlTest extends PHPUnit_Framework_TestCase
+class UrlTest extends PHPUnit_Framework_TestCase
 {
   function testSlash()
   {
@@ -212,6 +210,9 @@ class urlTest extends PHPUnit_Framework_TestCase
     $this->assertEquals($exp, (string)$u->asTag('Hello', 'my', '_blank', true), 'Абсолютная ссылка подставлена');
   }
 
+  /**
+   * @group failing
+   */
   function testNonAscii()
   {
     $u = new URL('http://ололо.рф/привет/мир/один:два/фаел.хтмл');
