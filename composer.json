@@ -10,6 +10,9 @@
     "true/punycode": "~1.0",
     "sqrt-pro/helpers": "dev-master"
   },
+  "require-dev": {
+    "satooshi/php-coveralls": "dev-master"
+  }
   "autoload": {
     "psr-0": {
       "SQRT": "src"
