@@ -1,19 +1,24 @@
 {
-    "name": "sqrt-pro/url",
-    "description": "SQRT.pro URL is part of SQRT Framework",
-    "homepage": "http://fw.sqrt.pro",
-    "type": "library",
-    "license": "MIT",
-    "require": {
-        "php": ">=5.3.0",
-        "sqrt-pro/tag": "dev-master",
-        "true/punycode": "~1.0",
-        "sqrt-pro/helpers": "dev-master"
-    },
-    "autoload": {
-        "psr-0": {
-            "SQRT": "src"
-        }
-    },
-    "minimum-stability": "dev"
+  "name": "sqrt-pro/url",
+  "description": "SQRT.pro URL is part of SQRT Framework",
+  "homepage": "http://fw.sqrt.pro",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.0",
+    "sqrt-pro/tag": "dev-master",
+    "true/punycode": "~1.0",
+    "sqrt-pro/helpers": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "SQRT": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1-dev"
+    }
+  }
 }
